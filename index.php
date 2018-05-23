@@ -51,18 +51,40 @@ td
   
   <form method="post" action="https://dated-exchange-rate.herokuapp.com/getToken.php">
     <table>
-      <tr>
+	    <tr>
         <td>
           End Point
         </td>
+        <td style="width:100%">
+          <input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] . 'services/oauth2/token';?>"/>
+        </td>
+      </tr>
+	    <tr>
         <td>
-          <input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] . 'services/oauth2/token'?>"/>
+          Code
+        </td>
+        <td style="width:100%">
+          <input name="code"  type="text" value="<?PHP echo $_GET['code']; ?>"/>
+        </td>
+      </tr>
+	    <tr>
+        <td>
+          Client Id
+        </td>
+        <td style="width:100%">
+          <input name="client_id"  type="text" value=""/>
+        </td>
+      </tr>
+	    <tr>
+        <td>
+          Client Secret
+        </td>
+        <td style="width:100%">
+          <input name="client_secret"  type="text" value=""/>
         </td>
       </tr>
     </table>
-    Code <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/><br/>
-    Client Id <input name="client_id"  type="text" value=""/><br/>
-    Client Secret <input name="client_secret"  type="text" value=""/><br/><br/>
+
     <input type="submit" value="Get Access Token">
   </form>
   
