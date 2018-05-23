@@ -22,8 +22,9 @@
 ?>
 
 <form method="post" action="https://dated-exchange-rate.herokuapp.com/getToken.php">
-	<input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] ?>"/>
-  <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/>
-  <input name="client_id"  type="text" value=""/>
-  <input name="client_secret"  type="text" value=""/>
+  End Point <input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] . 'services/oauth2/token'?>"/><br/>
+  Code <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/><br/>
+  Client Id <input name="client_id"  type="text" value=""/><br/>
+  Client Secret <input name="client_secret"  type="text" value=""/><br/><br/>
+  <input type="submit" value="Get Access Token">
 </form>
