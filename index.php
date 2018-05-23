@@ -16,28 +16,25 @@ echo "Done <br/>";
 
 <?php
 
-
+  // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
-    if(strpos($_SERVER['HTTP_REFERER'],'interworks.com') === false && strpos($_SERVER['HTTP_REFERER'],'furrymuff.co.uk') === false) {
-      echo 'Failed Referer Test (Invalid Referer)';
-      echo 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER'];
-    }
+    echo 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER'];
   } else {
-    echo 'No HTTP Referer)';
-
+    echo 'No HTTP Referer';
+    exit;
   }
 
   echo '<h2>Processing Request</h2>';
-/*
-  $url = '/services/oauth2/token';
+
+  $url = $_SERVER['HTTP_REFERER'] . 'services/oauth2/token';
 
   //Pass the fields to a string
   $fields_string = 
-    "code=" . $code
+    "code=" . $_GET['code']
     . "&grant_type=authorization_code"
-    . "&client_id=" . CLIENT_ID
-    . "&client_secret=" . CLIENT_SECRET
-    . "&redirect_uri=" . urlencode(REDIRECT_URI);
+    . "&client_id=" . "3MVG9sSN_PMn8tjSodyD28jSJpz2DOxGbn8FfezgD5nx51BflOpnioXROwyzm27CevivhcbLeDnc19M6AFWW9"
+    . "&client_secret=" . "7103702565598473317"
+    . "&redirect_uri=" . urlencode("https://dated-exchange-rate.herokuapp.com/");
 
   $cx = curl_init();
     curl_setopt($cx, CURLOPT_URL,$url);
@@ -48,8 +45,11 @@ echo "Done <br/>";
     curl_setopt($cx, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($cx, CURLOPT_FOLLOWLOCATION, FALSE);
   $init_response = curl_exec($cx);
+  
+  echo $init_response;
+  
   curl_close($cx);
-*/
+
   echo '<h2>Done</h2>';
 
 ?>
