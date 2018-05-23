@@ -1,5 +1,5 @@
 <?php
-echo "Running PHP";
+echo "Running PHP <br/>";
 
 foreach($_POST as $key => $value)
 {
@@ -10,6 +10,6 @@ foreach($_POST as $key => $value)
     }
 }
 
-echo "Done";
+echo "Done <br/>";
 
 ?>
