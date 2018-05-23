@@ -1,20 +1,15 @@
 <?php
-echo "Running PHP <br/>";
+  echo "Get the parameters <hr/>";
 
-foreach($_POST as $key => $value){
+  foreach($_POST as $key => $value){
     echo  $key . ' : ' . $value. '<br/>';
-}
+  }
 
-foreach($_GET as $key => $value){
+  foreach($_GET as $key => $value){
     echo  $key . ' : ' . $value. '<br/>';
-}
+  }
 
-echo "Done <br/>";
-
-?>
-
-
-<?php
+  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
 
   // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
@@ -23,6 +18,13 @@ echo "Done <br/>";
     echo 'No HTTP Referer';
     exit;
   }
+
+?>
+
+
+<?php
+
+//  require_once 'config.php';
 
   echo '<h2>Processing Request</h2>';
 
@@ -47,6 +49,7 @@ echo "Done <br/>";
   $init_response = curl_exec($cx);
   
   echo $init_response;
+  echo $init_response => access_token;
   
   curl_close($cx);
 
