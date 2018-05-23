@@ -12,7 +12,7 @@
     . "&grant_type=authorization_code"
     . "&client_id=" . $_POST['client_id']
     . "&client_secret=" . $_POST['client_secret']
-    . "&redirect_uri=" . urlencode("https://dated-exchange-rate.herokuapp.com/getToken.php");
+    . "&redirect_uri=" . urlencode("https://dated-exchange-rate.herokuapp.com");
 
   $cx = curl_init();
     curl_setopt($cx, CURLOPT_URL,$url);
