@@ -9,7 +9,7 @@
     echo  $key . ' : ' . $value. '<br/>';
   }
 
-//  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
+  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
 
   // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
@@ -48,7 +48,7 @@
   $init_response = curl_exec($cx);
   
   echo $init_response;
-  echo $init_response => access_token;
+//  echo $init_response => access_token;
   
   curl_close($cx);
 
