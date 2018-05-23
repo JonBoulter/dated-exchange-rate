@@ -1,8 +1,4 @@
-
-
 <?php
-
-  echo 'Processing Request<hr/>';
 
   $url = $_POST['url'];
 
@@ -24,15 +20,11 @@
     curl_setopt($cx, CURLOPT_FOLLOWLOCATION, FALSE);
   $init_response = curl_exec($cx);
   
-  echo $init_response;
+//  echo $init_response;
 
   // JSON Decode the response to get the Access Key
   $json = json_decode($init_response, true);
   echo '<hr/>Access Token: ' . $json['access_token'];
 
-  
   curl_close($cx);
-
-  echo '<h2>Done</h2>';
-
 ?>
