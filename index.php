@@ -20,11 +20,50 @@
   }
 
 ?>
+<head>
 
-<form method="post" action="https://dated-exchange-rate.herokuapp.com/getToken.php">
-  End Point <input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] . 'services/oauth2/token'?>"/><br/>
-  Code <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/><br/>
-  Client Id <input name="client_id"  type="text" value=""/><br/>
-  Client Secret <input name="client_secret"  type="text" value=""/><br/><br/>
-  <input type="submit" value="Get Access Token">
-</form>
+<style>
+body
+    {
+      width:100%;
+      margin-left:auto;
+      margin-right:auto;
+	  background-image:url('tdr-mac-desktop-discs-black.png.');
+	  background-size:cover;
+      background-color:#FFFFFF;
+	  color:#000000;
+		
+    }
+	
+table
+    {
+	  width:100%;
+	  background-color:#e6e6fa;
+	}
+td
+	{
+	  width:12.5%;
+      font-size:normal;
+    }
+</style>
+</head>
+<body>
+  
+  <form method="post" action="https://dated-exchange-rate.herokuapp.com/getToken.php">
+    <table>
+      <tr>
+        <td>
+          End Point
+        </td>
+        <td>
+          <input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] . 'services/oauth2/token'?>"/>
+        </td>
+      </tr>
+    </table>
+    Code <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/><br/>
+    Client Id <input name="client_id"  type="text" value=""/><br/>
+    Client Secret <input name="client_secret"  type="text" value=""/><br/><br/>
+    <input type="submit" value="Get Access Token">
+  </form>
+  
+</body>
