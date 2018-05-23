@@ -9,7 +9,7 @@
     echo  $key . ' : ' . $value. '<br/>';
   }
 
-  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
+  echo 'HTTP_HOST : ' . $_SERVER["REQUEST_SCHEME"] . '://' . $_SERVER['HTTP_HOST'] . '<br/>';
 
   // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
@@ -25,7 +25,7 @@
 
 //  require_once 'config.php';
 
-  echo '<h2>Processing Request</h2>';
+  echo 'Processing Request<hr/>';
 
   $url = $_SERVER['HTTP_REFERER'] . 'services/oauth2/token';
 
@@ -48,7 +48,11 @@
   $init_response = curl_exec($cx);
   
   echo $init_response;
-//  echo $init_response => access_token;
+
+  // JSON Decode the response to get the Access Key
+  $json = json_decode($json, true);
+  echo $json['access_token'];
+
   
   curl_close($cx);
 
