@@ -9,7 +9,7 @@
     echo  $key . ' : ' . $value. '<br/>';
   }
 
-  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
+//  echo 'HTTP_HOST : ' . $_SERVER['HTTP_HOST'] . '<br/>';
 
   // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
@@ -20,7 +20,6 @@
   }
 
 ?>
-
 
 <?php
 
