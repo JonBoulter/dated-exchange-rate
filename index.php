@@ -21,41 +21,9 @@
 
 ?>
 
-<?php
-
-//  require_once 'config.php';
-
-  echo 'Processing Request<hr/>';
-
-  $url = $_SERVER['HTTP_REFERER'] . 'services/oauth2/token';
-
-  //Pass the fields to a string
-  $fields_string = 
-    "code=" . $_GET['code']
-    . "&grant_type=authorization_code"
-    . "&client_id=" . "3MVG9sSN_PMn8tjSodyD28jSJpz2DOxGbn8FfezgD5nx51BflOpnioXROwyzm27CevivhcbLeDnc19M6AFWW9"
-    . "&client_secret=" . "7103702565598473317"
-    . "&redirect_uri=" . urlencode("https://dated-exchange-rate.herokuapp.com/");
-
-  $cx = curl_init();
-    curl_setopt($cx, CURLOPT_URL,$url);
-    curl_setopt($cx, CURLOPT_POST, true);
-    curl_setopt($cx, CURLOPT_POSTFIELDS,$fields_string);
-    curl_setopt($cx, CURLOPT_SSL_VERIFYPEER, FALSE);
-    curl_setopt($cx, CURLOPT_SSL_VERIFYHOST, FALSE);
-    curl_setopt($cx, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($cx, CURLOPT_FOLLOWLOCATION, FALSE);
-  $init_response = curl_exec($cx);
-  
-  echo $init_response;
-
-  // JSON Decode the response to get the Access Key
-  $json = json_decode($init_response, true);
-  echo '<hr/>Access Token: ' . $json['access_token'];
-
-  
-  curl_close($cx);
-
-  echo '<h2>Done</h2>';
-
-?>
+<form method="post" action="https://dated-exchange-rate.herokuapp.com/getToken.php">
+	<input name="url"  type="text" value="<?PHP echo $_SERVER['HTTP_REFERER'] ?>"/>
+  <input name="code"  type="text" value="<?PHP echo $_GET['code'] ?>"/>
+  <input name="client_id"  type="text" value=""/>
+  <input name="client_secret"  type="text" value=""/>
+</form>
