@@ -50,7 +50,7 @@
   echo $init_response;
 
   // JSON Decode the response to get the Access Key
-  $json = json_decode($json, true);
+  $json = json_decode($init_response, true);
   echo '<hr/>Access Token: ' . $json['access_token'];
 
   
