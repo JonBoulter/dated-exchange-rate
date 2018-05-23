@@ -1,5 +1,5 @@
 <?php
-  echo "Get the parameters <hr/>";
+/*  echo "Get the parameters <hr/>";
 
   foreach($_POST as $key => $value){
     echo  $key . ' : ' . $value. '<br/>';
@@ -18,33 +18,35 @@
     echo 'No HTTP Referer'. '<br/>';
     exit;
   }
-
+*/
 ?>
 <head>
 
 <style>
-body
-    {
-      width:100%;
-      margin-left:auto;
-      margin-right:auto;
-	  background-image:url('tdr-mac-desktop-discs-black.png.');
-	  background-size:cover;
-      background-color:#FFFFFF;
-	  color:#000000;
-		
-    }
+body {
+	width:100%;
+  margin-left:auto;
+  margin-right:auto;
+	background-image:url('tdr-mac-desktop-discs-black.png.');
+  background-size:cover;
+  background-color:#FFFFFF;
+  color:#000000;
+  }
 	
-table
-    {
-	  width:100%;
-	  background-color:#e6e6fa;
+table {
+  width:100%;
+  background-color:#e6e6fa;
 	}
-td
-	{
-	  width:12.5%;
-      font-size:normal;
-    }
+  
+td {
+  width:12.5%;
+  font-size:normal;
+  }
+  
+input {
+  width:100%;
+	}
+  
 </style>
 </head>
 <body>
