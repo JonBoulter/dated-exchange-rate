@@ -13,9 +13,9 @@
 
   // Get the Referer - so we don't have to limit to a single site
   if(isset($_SERVER['HTTP_REFERER'])){
-    echo 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER'];
+    echo 'HTTP_REFERER : ' . $_SERVER['HTTP_REFERER']. '<br/>';
   } else {
-    echo 'No HTTP Referer';
+    echo 'No HTTP Referer'. '<br/>';
     exit;
   }
 
@@ -51,7 +51,7 @@
 
   // JSON Decode the response to get the Access Key
   $json = json_decode($json, true);
-  echo $json['access_token'];
+  echo '<hr/>Access Token: ' . $json['access_token'];
 
   
   curl_close($cx);
