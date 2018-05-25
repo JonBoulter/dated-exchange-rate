@@ -66,7 +66,7 @@ input {
           Code
         </td>
         <td style="width:100%">
-          <input name="code"  type="text" value="<?PHP echo $_GET['code']; ?>"/>
+          <input name="code"  type="password" value="<?PHP echo $_GET['code']; ?>"/>
         </td>
       </tr>
 	    <tr>
@@ -74,7 +74,7 @@ input {
           Client Id
         </td>
         <td style="width:100%">
-          <input name="client_id"  type="text" value=""/>
+          <input name="client_id"  type="password" value=""/>
         </td>
       </tr>
 <!--	    <tr>
