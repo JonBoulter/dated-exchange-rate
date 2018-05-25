@@ -77,14 +77,14 @@ input {
           <input name="client_id"  type="text" value=""/>
         </td>
       </tr>
-	    <tr>
+<!--	    <tr>
         <td>
           Client Secret
         </td>
         <td style="width:100%">
           <input name="client_secret"  type="text" value=""/>
         </td>
-      </tr>
+      </tr> -->
     </table>
 
     <input type="submit" value="Get Access Token">
